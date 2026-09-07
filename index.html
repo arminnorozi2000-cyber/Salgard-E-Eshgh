@@ -1,35 +1,112 @@
-<!DOCTYPE html>
+line-height: 1.9;
 
-<html lang="en">
+            font-size: 15px;
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Salgard E Eshgh ❤️</title>
-
-    <style>
-
-        * {
-
-            box-sizing: border-box;
-
-            margin: 0;
-
-            padding: 0;
-
+            color:
+                rgba(255, 255, 255, 0.82);
         }
 
-        body {
+        .footer {
+            margin-top: 25px;
 
-            min-height: 100vh;
+            font-size: 12px;
 
-            display: flex;
+            color:
+                rgba(255, 255, 255, 0.45);
+        }
 
-            justify-content: center;
+        /* Mobile */
 
-            align-items: center;
+        @media (max-width: 480px) {
 
-            font-family: Arial, sans-serif;
+            .card {
+                padding:
+                    35px 22px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .heart-main {
+                font-size: 55px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+
+    <div class="heart">❤️</div>
+    <div class="heart">♡</div>
+    <div class="heart">❤️</div>
+    <div class="heart">♡</div>
+    <div class="heart">❤️</div>
+
+
+    <!-- Main Card -->
+
+    <div class="card">
+
+        <div class="heart-main">
+            ❤️
+        </div>
+
+
+        <!-- Song Name -->
+
+        <h1>
+            Salgard E Eshgh❤️
+        </h1>
+
+
+        <div class="subtitle">
+            Our Love Story
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <!-- AUDIO PLAYER -->
+
+        <audio controls>
+
+            <source
+                src="Screen_Recording_20260907-132214.mp3"
+                type="audio/mpeg"
+            >
+
+            مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
+
+        </audio>
+
+
+        <!-- Love Message -->
+
+        <div class="message">
+
+            بعضی لحظه‌ها فقط یک بار اتفاق می‌افتند،
+            <br>
+
+            اما بعضی آدم‌ها...
+            <br>
+
+            برای همیشه در قلبت می‌مانند. ❤️
+
+        </div>
+
+
+        <div class="footer">
+
+            Made with ❤️
+
+        </div>
+
+    </div>
+
+</body>
+</html>
