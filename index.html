@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -17,141 +18,179 @@
             padding: 0;
         }
 
+
         body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 
-    font-family: Arial, sans-serif;
+            min-height: 100vh;
 
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.55)
-        ),
-        url("IMG_2837.jpeg");
+            font-family: Arial, sans-serif;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-        }
+            background-image: url("IMG_2837.jpeg");
 
+            background-size: cover;
 
-        /* قلب‌های شناور */
+            background-position: center center;
 
-        .heart {
-            position: absolute;
-            bottom: -60px;
+            background-repeat: no-repeat;
 
-            font-size: 25px;
+            background-attachment: fixed;
 
-            opacity: 0.7;
-
-            animation:
-                floating 9s linear infinite;
-        }
-
-        .heart:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .heart:nth-child(2) {
-            left: 25%;
-            animation-delay: 2s;
-        }
-
-        .heart:nth-child(3) {
-            left: 50%;
-            animation-delay: 4s;
-        }
-
-        .heart:nth-child(4) {
-            left: 75%;
-            animation-delay: 1s;
-        }
-
-        .heart:nth-child(5) {
-            left: 90%;
-            animation-delay: 3s;
-        }
-
-
-        @keyframes floating {
-
-            0% {
-                transform:
-                    translateY(0)
-                    scale(0.8);
-
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.7;
-            }
-
-            100% {
-                transform:
-                    translateY(-110vh)
-                    scale(1.4)
-                    rotate(25deg);
-
-                opacity: 0;
-            }
-        }
-
-
-        /* کارت اصلی */
-
-        .card {
+            overflow: hidden;
 
             position: relative;
+        }
+
+
+        /* لایه بسیار ملایم برای خوانایی */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.05),
+                    rgba(0,0,0,0.12)
+                );
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        /* عنوان آهنگ */
+
+        .song-info {
+
+            position: fixed;
+
+            top: 45px;
+
+            left: 25px;
 
             z-index: 2;
 
-            width: 90%;
+            direction: ltr;
 
-            max-width: 430px;
-
-            padding:
-                40px 25px;
-
-            text-align: center;
+            text-align: left;
 
             color: white;
 
-            background:
-                rgba(255, 255, 255, 0.10);
+            max-width: 220px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.18);
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 25px 60px
-                rgba(0, 0, 0, 0.45);
-
-            backdrop-filter:
-                blur(15px);
-
-            -webkit-backdrop-filter:
-                blur(15px);
+            text-shadow:
+                0 2px 8px rgba(0,0,0,0.7);
         }
 
 
-        /* قلب اصلی */
+        .song-info h1 {
 
-        .main-heart {
+            font-size: 28px;
 
-            font-size: 60px;
+            font-weight: 700;
 
-            margin-bottom: 15px;
+            margin-bottom: 8px;
+
+            line-height: 1.2;
+        }
+
+
+        .song-info p {
+
+            font-size: 15px;
+
+            color:
+                rgba(255,255,255,0.9);
+        }
+
+
+        /* پلیر و متن پایین */
+
+        .music-box {
+
+            position: fixed;
+
+            bottom: 35px;
+
+            left: 20px;
+
+            z-index: 2;
+
+            width: min(280px, 75vw);
+
+            padding: 16px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(0,0,0,0.28);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,0.25);
+        }
+
+
+        /* پلیر کوچک */
+
+        audio {
+
+            width: 100%;
+
+            height: 38px;
+
+            display: block;
+        }
+
+
+        /* متن عاشقانه */
+
+        .message {
+
+            margin-top: 14px;
+
+            color: white;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            text-align: right;
+
+            text-shadow:
+                0 1px 5px rgba(0,0,0,0.8);
+        }
+
+
+        /* قلب */
+
+        .heart {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 20px;
+
+            z-index: 2;
+
+            font-size: 28px;
 
             animation:
                 heartbeat 1.5s infinite;
@@ -161,114 +200,58 @@
         @keyframes heartbeat {
 
             0%, 100% {
+
                 transform: scale(1);
             }
 
             50% {
-                transform: scale(1.12);
+
+                transform: scale(1.15);
             }
         }
 
 
-        /* عنوان آهنگ */
-
-        h1 {
-
-            direction: ltr;
-
-            font-size: 30px;
-
-            margin-bottom: 12px;
-
-            color: white;
-        }
-
-
-        .subtitle {
-
-            direction: ltr;
-
-            font-size: 16px;
-
-            color:
-                rgba(255, 255, 255, 0.75);
-
-            margin-bottom: 25px;
-        }
-
-
-        .line {
-
-            width: 70px;
-
-            height: 2px;
-
-            margin:
-                0 auto 30px;
-
-            background:
-                #ff9bbd;
-
-            border-radius: 20px;
-        }
-
-
-        /* پلیر */
-
-        audio {
-
-            width: 100%;
-
-            margin-top: 5px;
-        }
-
-
-        /* متن عاشقانه */
-
-        .message {
-
-            margin-top: 30px;
-
-            line-height: 2;
-
-            font-size: 16px;
-
-            color:
-                rgba(255, 255, 255, 0.9);
-        }
-
-
-        .footer {
-
-            direction: ltr;
-
-            margin-top: 25px;
-
-            font-size: 13px;
-
-            color:
-                rgba(255, 255, 255, 0.55);
-        }
-
-
-        /* موبایل */
+        /* تنظیمات مخصوص گوشی */
 
         @media (max-width: 480px) {
 
-            .card {
+            .song-info {
 
-                padding:
-                    35px 20px;
+                top: 35px;
+
+                left: 18px;
+
+                max-width: 180px;
             }
 
-            h1 {
 
-                font-size: 26px;
+            .song-info h1 {
+
+                font-size: 23px;
             }
 
-            .main-heart {
 
-                font-size: 55px;
+            .song-info p {
+
+                font-size: 13px;
+            }
+
+
+            .music-box {
+
+                left: 15px;
+
+                bottom: 25px;
+
+                width: 240px;
+
+                padding: 13px;
+            }
+
+
+            .message {
+
+                font-size: 12px;
             }
         }
 
@@ -280,32 +263,31 @@
 <body>
 
 
-    <div class="heart">❤️</div>
-    <div class="heart">♡</div>
-    <div class="heart">❤️</div>
-    <div class="heart">♡</div>
-    <div class="heart">❤️</div>
+    <!-- عنوان آهنگ -->
 
-
-    <div class="card">
-
-
-        <div class="main-heart">
-            ❤️
-        </div>
-
+    <div class="song-info">
 
         <h1>
             Salgard E Eshgh ❤️
         </h1>
 
-
-        <div class="subtitle">
+        <p>
             Our Love Story
-        </div>
+        </p>
+
+    </div>
 
 
-        <div class="line"></div>
+    <!-- قلب -->
+
+    <div class="heart">
+        ❤️
+    </div>
+
+
+    <!-- پلیر و متن -->
+
+    <div class="music-box">
 
 
         <audio controls>
@@ -322,19 +304,8 @@
         <div class="message">
 
             بعضی لحظه‌ها فقط یک بار اتفاق می‌افتند،
-            <br>
-
-            اما بعضی آدم‌ها...
-            <br>
-
-            برای همیشه در قلبت می‌مانند. ❤️
-
-        </div>
-
-
-        <div class="footer">
-
-            Made with ❤️
+            اما بعضی آدم‌ها برای همیشه
+            در قلبت می‌مانند. ❤️
 
         </div>
 
