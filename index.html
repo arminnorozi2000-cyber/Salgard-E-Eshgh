@@ -1,44 +1,290 @@
-line-height: 1.9;
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-            font-size: 15px;
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Salgard E Eshgh ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 100, 150, 0.35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(180, 70, 140, 0.30),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #180914,
+                    #42162f,
+                    #1b0b1e
+                );
+        }
+
+
+        /* قلب‌های شناور */
+
+        .heart {
+            position: absolute;
+            bottom: -60px;
+
+            font-size: 25px;
+
+            opacity: 0.7;
+
+            animation:
+                floating 9s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 75%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 90%;
+            animation-delay: 3s;
+        }
+
+
+        @keyframes floating {
+
+            0% {
+                transform:
+                    translateY(0)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    scale(1.4)
+                    rotate(25deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* کارت اصلی */
+
+        .card {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 90%;
+
+            max-width: 430px;
+
+            padding:
+                40px 25px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                rgba(255, 255, 255, 0.10);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.18);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, 0.45);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+        }
+
+
+        /* قلب اصلی */
+
+        .main-heart {
+
+            font-size: 60px;
+
+            margin-bottom: 15px;
+
+            animation:
+                heartbeat 1.5s infinite;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+
+        /* عنوان آهنگ */
+
+        h1 {
+
+            direction: ltr;
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+
+            color: white;
+        }
+
+
+        .subtitle {
+
+            direction: ltr;
+
+            font-size: 16px;
 
             color:
-                rgba(255, 255, 255, 0.82);
+                rgba(255, 255, 255, 0.75);
+
+            margin-bottom: 25px;
         }
+
+
+        .line {
+
+            width: 70px;
+
+            height: 2px;
+
+            margin:
+                0 auto 30px;
+
+            background:
+                #ff9bbd;
+
+            border-radius: 20px;
+        }
+
+
+        /* پلیر */
+
+        audio {
+
+            width: 100%;
+
+            margin-top: 5px;
+        }
+
+
+        /* متن عاشقانه */
+
+        .message {
+
+            margin-top: 30px;
+
+            line-height: 2;
+
+            font-size: 16px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
 
         .footer {
+
+            direction: ltr;
+
             margin-top: 25px;
 
-            font-size: 12px;
+            font-size: 13px;
 
             color:
-                rgba(255, 255, 255, 0.45);
+                rgba(255, 255, 255, 0.55);
         }
 
-        /* Mobile */
+
+        /* موبایل */
 
         @media (max-width: 480px) {
 
             .card {
+
                 padding:
-                    35px 22px;
+                    35px 20px;
             }
 
             h1 {
-                font-size: 25px;
+
+                font-size: 26px;
             }
 
-            .heart-main {
+            .main-heart {
+
                 font-size: 55px;
             }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Floating Hearts -->
 
     <div class="heart">❤️</div>
     <div class="heart">♡</div>
@@ -46,20 +292,17 @@ line-height: 1.9;
     <div class="heart">♡</div>
     <div class="heart">❤️</div>
 
-
-    <!-- Main Card -->
 
     <div class="card">
 
-        <div class="heart-main">
+
+        <div class="main-heart">
             ❤️
         </div>
 
 
-        <!-- Song Name -->
-
         <h1>
-            Salgard E Eshgh❤️
+            Salgard E Eshgh ❤️
         </h1>
 
 
@@ -71,21 +314,16 @@ line-height: 1.9;
         <div class="line"></div>
 
 
-        <!-- AUDIO PLAYER -->
-
         <audio controls>
 
             <source
                 src="Screen_Recording_20260907-132214.mp3"
-                type="audio/mpeg"
-            >
+                type="audio/mpeg">
 
             مرورگر شما از پخش فایل صوتی پشتیبانی نمی‌کند.
 
         </audio>
 
-
-        <!-- Love Message -->
 
         <div class="message">
 
@@ -106,7 +344,10 @@ line-height: 1.9;
 
         </div>
 
+
     </div>
 
+
 </body>
+
 </html>
